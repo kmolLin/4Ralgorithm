@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project 4Ralgorithm -->
-<!-- Saved: 2017-12-29, 18:33:36 -->
+<!-- Saved: 2017-12-30, 20:40:20 -->
 <!-- Copyright (C) 2017 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -17,6 +17,7 @@
     <Source>algorithm/TS.py</Source>
     <Source>algorithm/__init__.py</Source>
     <Source>algorithm/setup.py</Source>
+    <Source>algorithm/sympypower.py</Source>
     <Source>algorithm/test_4Rcode.py</Source>
   </Sources>
   <Forms/>
