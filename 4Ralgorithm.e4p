@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project 4Ralgorithm -->
-<!-- Saved: 2017-12-30, 20:40:20 -->
-<!-- Copyright (C) 2017 ,  -->
+<!-- Saved: 2018-01-13, 15:08:44 -->
+<!-- Copyright (C) 2018 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
   <Hash>06bf249115f1398db6843230810b5a33dbc5436d</Hash>
@@ -28,6 +28,8 @@
     <Other>README.md</Other>
     <Other>algorithm/planlinkage.pyx</Other>
     <Other>algorithm/tinycadlib.pyx</Other>
+    <Other>gcs/7Vector.pyx</Other>
+    <Other>gcs/mathDefines.pyx</Other>
   </Others>
   <Vcs>
     <VcsType>None</VcsType>
