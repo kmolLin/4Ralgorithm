@@ -40,10 +40,10 @@ cdef extern from "v_repMath/7Vector.h":
         C7Vector(C7Vector& v)
         C7Vector(C4Vector& q)
         C7Vector(C3Vector& x)
-        C7Vector(C4Vector& q,const C3Vector& x)
+        C7Vector(C4Vector& q,C3Vector& x)
         C7Vector(float m[4][4])
         C7Vector(C4X4Matrix& m)
-        C7Vector(float angle,const C3Vector& pos,const C3Vector& dir)
+        C7Vector(float angle,C3Vector& pos,C3Vector& dir)
 
 cdef extern from "v_repMath/Vector.h":
     cdef cppclass CVector:

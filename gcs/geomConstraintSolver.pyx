@@ -6,6 +6,7 @@ cimport MyMath
 from MyMath cimport (
         C7Vector, 
         C4Vector, 
+        C3Vector, 
 )
 
 
@@ -13,12 +14,20 @@ from MyMath cimport (
 cdef extern from "inverseKinematics/geomConstraintSolver/iKGraphNode.h":
     cdef cppclass CIKGraphNode:
         CIKGraphNode()
+        int type #IK_GRAPH_JOINT_TYPE,IK_GRAPH_OBJECT_TYPE
+        int explorationID
+        int elementID
+        int nodeID
+        int userData0
+        int userData1
+    
 
 cdef extern from "inverseKinematics/geomConstraintSolver/iKGraphObject.h":    
     cdef cppclass CIKGraphObject:
         CIKGraphObject()
         CIKGraphObject(C7Vector& cumulTransf,C7Vector& targetCumulTransf) # Tip object
         CIKGraphObject(C7Vector& cumulTransf)
+        int getConnectionNumber()
 
 cdef extern from "inverseKinematics/geomConstraintSolver/iKGraphJoint.h":
     cdef cppclass CIKGraphJoint:
@@ -69,3 +78,11 @@ cdef extern from "inverseKinematics/geomConstraintSolver/geometricConstraintSolv
         @staticmethod
         bool solve(CIKGraphObjCont& graphContainer,SGeomConstrSolverParam& parameters)
     
+cpdef void inesert(object test):
+    cdef C7Vector s = C7Vector(C3Vector(test[0], test[1], test[2]))
+    cdef CIKGraphObjCont graph = CIKGraphObjCont()
+    a =graph.insertPassiveObjectNode(s)
+    graph.insertRevoluteJointNode(s, 2, 3, 5, 2, True , 4)
+    aa = graph.getNodeFromNodeID(0)
+    
+    cdef CGeometricConstraintSolver sol
